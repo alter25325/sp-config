@@ -1,0 +1,25 @@
+spring:
+  rabbitmq:
+    host: 192.168.222.134
+    port: 5672
+    username: admin
+    password: admin
+  application:
+    name: config-server
+  
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/alter25325/sp-config
+          searchPaths: config
+          #username: your-username
+          #password: your-password
+    
+server:
+  port: 6001
+    
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka1:2001/eureka, http://eureka2:2002/eureka
